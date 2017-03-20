@@ -1,18 +1,19 @@
 imports:
-    - { resource: parameters.yml }
+    - { resource: ../../../../../app/config/parameters.yml }
     - { resource: services.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    sulu_sme.kernel.root_dir: %kernel.root_dir%/../vendor/connectholland/sulu-sme/app
 
 framework:
     #esi:             ~
     translator: { fallbacks: ["%locale%"] }
     secret: "%secret%"
     router:
-        resource: "%kernel.root_dir%/config/%sulu.context%/routing_%kernel.environment%.yml"
+        resource: "%sulu_sme.kernel.root_dir%/config/%sulu.context%/routing_%kernel.environment%.yml"
         strict_requirements: ~
     form:            ~
     csrf_protection: ~
@@ -81,20 +82,20 @@ jms_serializer:
 # SuluCore Configuration
 sulu_core:
     webspace:
-        config_dir: "%kernel.root_dir%/Resources/webspaces"
+        config_dir: "%sulu_sme.kernel.root_dir%/Resources/webspaces"
     content:
         structure:
             default_type:
                 snippet: "default"
             paths:
                 homepage:
-                    path: "%kernel.root_dir%/Resources/templates/pages"
+                    path: "%sulu_sme.kernel.root_dir%/Resources/templates/pages"
                     type: "home"
                 page:
-                    path: "%kernel.root_dir%/Resources/templates/pages"
+                    path: "%sulu_sme.kernel.root_dir%/Resources/templates/pages"
                     type: "page"
                 snippet:
-                    path: "%kernel.root_dir%/Resources/templates/snippets"
+                    path: "%sulu_sme.kernel.root_dir%/Resources/templates/snippets"
                     type: "snippet"
 
 # SuluDocumentManager Configuration
