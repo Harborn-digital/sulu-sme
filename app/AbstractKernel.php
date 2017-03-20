@@ -38,6 +38,7 @@ abstract class AbstractKernel extends SuluKernel
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
 
             // rest
             new FOS\RestBundle\FOSRestBundle(),
@@ -78,7 +79,6 @@ abstract class AbstractKernel extends SuluKernel
             // symfony standard
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
-            $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
 
             // debug enhancement
             $bundles[] = new Sulu\Bundle\TestBundle\SuluTestBundle();
@@ -94,7 +94,7 @@ abstract class AbstractKernel extends SuluKernel
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load(
-            $this->rootDir . DIRECTORY_SEPARATOR
+            $this->getRootDir() . DIRECTORY_SEPARATOR
             . 'config' . DIRECTORY_SEPARATOR
             . $this->getContext() . DIRECTORY_SEPARATOR
             . 'config_' . $this->getEnvironment() . '.yml'
@@ -106,7 +106,7 @@ abstract class AbstractKernel extends SuluKernel
      */
     public function getCacheDir()
     {
-        return dirname($this->rootDir) . DIRECTORY_SEPARATOR
+        return dirname($this->getRootDir()) . DIRECTORY_SEPARATOR
         . 'var' . DIRECTORY_SEPARATOR
         . 'cache' . DIRECTORY_SEPARATOR
         . $this->getContext() . DIRECTORY_SEPARATOR
@@ -118,7 +118,7 @@ abstract class AbstractKernel extends SuluKernel
      */
     public function getLogDir()
     {
-        return dirname($this->rootDir) . DIRECTORY_SEPARATOR
+        return dirname($this->getRootDir()) . DIRECTORY_SEPARATOR
         . 'var' . DIRECTORY_SEPARATOR
         . 'logs' . DIRECTORY_SEPARATOR
         . $this->getContext() . DIRECTORY_SEPARATOR
@@ -130,8 +130,21 @@ abstract class AbstractKernel extends SuluKernel
         return array_merge(
             parent::getKernelParameters(),
             [
-                'kernel.var_dir' => dirname($this->rootDir) . DIRECTORY_SEPARATOR . 'var'
+                'kernel.var_dir' => dirname($this->getRootDir()) . DIRECTORY_SEPARATOR . 'var'
             ]
         );
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRootDir()
+    {
+        if ($this->rootDir === null) {
+            $this->rootDir = realpath(parent::getRootDir().'/../../../../app');
+        }
+
+        return $this->rootDir;
+    }
+
 }

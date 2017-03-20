@@ -60,6 +60,13 @@ doctrine_cache:
         phpcr_nodes:
             type: "%phpcr_cache%"
 
+# DoctrineMigrations Configuration
+doctrine_migrations:
+    namespace: ConnectHolland\SuluSME\DoctrineMigrations
+    name: Sulu SME database migrations
+    dir_name: '%sulu_sme.kernel.root_dir%/DoctrineMigrations'
+
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"

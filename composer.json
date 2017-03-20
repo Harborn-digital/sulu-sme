@@ -22,6 +22,7 @@
         "doctrine/doctrine-bundle": "^1.0",
         "doctrine/doctrine-cache-bundle": "^1.0",
         "doctrine/doctrine-fixtures-bundle": "2.2.*",
+        "doctrine/doctrine-migrations-bundle": "^1.2",
         "incenteev/composer-parameter-handler": "^2.0",
         "jackalope/jackalope-doctrine-dbal": "^1.2.5",
         "jackalope/jackalope-jackrabbit": "^1.2.0",
@@ -49,31 +50,6 @@
         }
     },
     "scripts": {
-        "post-install-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "Sulu\\Bundle\\TranslateBundle\\Composer\\TranslateScriptHandler::installTranslations",
-            "Sulu\\Bundle\\MediaBundle\\Composer\\MediaScriptHandler::initBundle",
-            "Massive\\Bundle\\SearchBundle\\Composer\\SearchScriptHandler::initBundle"
-        ],
-        "post-update-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "Sulu\\Bundle\\TranslateBundle\\Composer\\TranslateScriptHandler::installTranslations",
-            "Sulu\\Bundle\\MediaBundle\\Composer\\MediaScriptHandler::initBundle",
-            "Massive\\Bundle\\SearchBundle\\Composer\\SearchScriptHandler::initBundle"
-        ],
-        "post-create-project-cmd": [
-            "Sulu\\Bundle\\CoreBundle\\Composer\\ScriptHandler::removeComposerLockFromGitIgnore"
-        ]
     },
     "config": {
         "bin-dir": "bin",
@@ -84,11 +60,6 @@
         "symfony-bin-dir": "bin",
         "symfony-web-dir": "web",
         "symfony-var-dir": "var",
-        "symfony-assets-install": "relative",
-        "incenteev-parameters": [
-            {
-                "file": "app/config/parameters.yml"
-            }
-        ]
+        "symfony-assets-install": "relative"
     }
 }
