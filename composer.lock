@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dab7326062411787ed645acb0d3c54bd",
-    "content-hash": "1a49cf3a72addcb0198b3b621ac57006",
+    "hash": "6716317d5de3970fe5e35a8c7908b438",
+    "content-hash": "993d28b4684bba7e4810575f9ecfb487",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -195,6 +195,43 @@
                 "sockets"
             ],
             "time": "2017-01-06 14:36:36"
+        },
+        {
+            "name": "connectholland/sulu-block-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ConnectHolland/sulu-block-bundle.git",
+                "reference": "2c862cf8615a766a339bab67290bbf4487551643"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ConnectHolland/sulu-block-bundle/zipball/2c862cf8615a766a339bab67290bbf4487551643",
+                "reference": "2c862cf8615a766a339bab67290bbf4487551643",
+                "shasum": ""
+            },
+            "require": {
+                "niels-nijens/protocol-stream": "^1.0",
+                "php": "^5.5 | ^5.6 | ^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ConnectHolland\\Sulu\\BlockBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Reyo Stallenberg",
+                    "email": "reyostallenberg@gmail.com"
+                }
+            ],
+            "description": "A Symfony Bundle for Sulu content management platform containing boilerplate blocks",
+            "time": "2017-02-16 12:33:07"
         },
         {
             "name": "dantleech/phpcr-migrations-bundle",
@@ -2850,6 +2887,50 @@
             "time": "2016-03-05 10:22:50"
         },
         {
+            "name": "niels-nijens/protocol-stream",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/niels-nijens/protocol-stream.git",
+                "reference": "c45b8d282bbb83f2a3d17adeb1d66500c14a868c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/niels-nijens/protocol-stream/zipball/c45b8d282bbb83f2a3d17adeb1d66500c14a868c",
+                "reference": "c45b8d282bbb83f2a3d17adeb1d66500c14a868c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.4.0 || ^7.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8",
+                "satooshi/php-coveralls": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nijens\\ProtocolStream\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Niels Nijens",
+                    "email": "nijens.niels@gmail.com"
+                }
+            ],
+            "description": "A library to create stream wrappers in PHP.",
+            "keywords": [
+                "stream",
+                "wrapper"
+            ],
+            "time": "2016-04-04 12:24:55"
+        },
+        {
             "name": "ocramius/proxy-manager",
             "version": "1.0.2",
             "source": {
@@ -4000,6 +4081,67 @@
             ],
             "description": "A security checker for your composer.lock",
             "time": "2017-03-09 17:33:20"
+        },
+        {
+            "name": "sentry/sentry",
+            "version": "1.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/getsentry/sentry-php.git",
+                "reference": "5bee26136ab3fc166334cd972892bf71bd361558"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/5bee26136ab3fc166334cd972892bf71bd361558",
+                "reference": "5bee26136ab3fc166334cd972892bf71bd361558",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.2.4"
+            },
+            "conflict": {
+                "raven/raven": "*"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^1.8.0",
+                "monolog/monolog": "*",
+                "phpunit/phpunit": "^4.8 || ^5.0"
+            },
+            "suggest": {
+                "monolog/monolog": "Automatically capture Monolog events as breadcrumbs"
+            },
+            "bin": [
+                "bin/sentry"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.6.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Raven_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "David Cramer",
+                    "email": "dcramer@gmail.com"
+                }
+            ],
+            "description": "A PHP client for Sentry (http://getsentry.com)",
+            "homepage": "http://getsentry.com",
+            "keywords": [
+                "log",
+                "logging"
+            ],
+            "time": "2017-02-03 07:32:53"
         },
         {
             "name": "stof/doctrine-extensions-bundle",
@@ -5846,6 +5988,36 @@
     ],
     "packages-dev": [
         {
+            "name": "connectholland/sulu-admin-bundle",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ConnectHolland/sulu-admin-bundle.git",
+                "reference": "cf8870fd29056e1fab59dfea83923f9f0336ac0c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ConnectHolland/sulu-admin-bundle/zipball/cf8870fd29056e1fab59dfea83923f9f0336ac0c",
+                "reference": "cf8870fd29056e1fab59dfea83923f9f0336ac0c",
+                "shasum": ""
+            },
+            "type": "project",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://composer.packages.connectholland.nl/downloads/",
+            "authors": [
+                {
+                    "name": "Giso Stallenberg",
+                    "email": "gisostallenberg@gmail.com"
+                }
+            ],
+            "description": "The Connect Holland admin bundle for Sulu CMS",
+            "time": "2017-01-06 13:21:39"
+        },
+        {
             "name": "dantleech/glob-finder",
             "version": "1.0.0",
             "source": {
@@ -6014,12 +6186,13 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
+        "connectholland/sulu-block-bundle": 20,
         "zendframework/zendsearch": 20,
         "phpcr/phpcr-shell": 10
     },
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.5"
