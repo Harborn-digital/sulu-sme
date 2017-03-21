@@ -17,6 +17,7 @@
     },
     "require": {
         "php": ">=5.5",
+        "connectholland/sulu-admin-bundle": "^1.1",
         "connectholland/sulu-block-bundle": "dev-master",
         "dantleech/phpcr-migrations-bundle": "0.1.*",
         "doctrine/doctrine-bundle": "^1.0",
