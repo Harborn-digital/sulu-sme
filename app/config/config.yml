@@ -7,8 +7,6 @@ imports:
 parameters:
     locale: en
     sulu_sme.kernel.root_dir: '%kernel.root_dir%/../vendor/connectholland/sulu-sme/app'
-    sulu.cache_dir: '%sulu_sme.kernel.root_dir%/../var/cache/%sulu.context%/%kernel.environment%'
-    sulu.log_dir: '%sulu_sme.kernel.root_dir%/../var/logs/%sulu.context%/%kernel.environment%'
 
 framework:
     #esi:             ~
