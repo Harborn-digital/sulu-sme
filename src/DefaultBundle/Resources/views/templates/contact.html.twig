@@ -1,0 +1,14 @@
+{% extends 'SMEDefaultBundle::master.html.twig' %}
+
+{% block meta %}
+    {% autoescape false %}
+        {{ sulu_seo(extension.seo, content, urls, shadowBaseLocale) }}
+    {% endautoescape %}
+{% endblock %}
+
+{% block content %}
+    <div vocab='http://schema.org/' typeof='Content'>
+        {% include 'ConnectHollandSuluBlockBundle::html5-blocks.html.twig' %}
+        {% include 'ConnectHollandSuluBlockBundle::html5-blocks.html.twig' with {element: 'aside', collection: 'banners'} %}
+    </div>
+{% endblock %}

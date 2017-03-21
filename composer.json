@@ -5,8 +5,8 @@
     "description": "Base for Sulu small and medium sized enterprises",
     "version": "dev-master",
     "autoload": {
-        "psr-0": {
-            "": "src/"
+        "psr-4": {
+            "ConnectHolland\\Sulu\\SME\\": "src/"
         },
         "classmap": [
             "app/AbstractKernel.php",

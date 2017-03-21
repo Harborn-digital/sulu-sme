@@ -8,6 +8,7 @@
     <meta>
         <title lang="en">Default</title>
         <title lang="de">Standard</title>
+        <title lang="nl">Standaard</title>
     </meta>
 
     <properties>
@@ -15,6 +16,7 @@
             <meta>
                 <title lang="en">Title</title>
                 <title lang="de">Titel</title>
+                <title lang="nl">Titel</title>
             </meta>
 
             <tag name="sulu.node.name"/>
@@ -24,6 +26,7 @@
             <meta>
                 <title lang="en">Description</title>
                 <title lang="de">Beschreibung</title>
+                <title lang="nl">Omschrijving</title>
             </meta>
         </property>
     </properties>

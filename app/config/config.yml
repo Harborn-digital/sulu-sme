@@ -6,7 +6,9 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
-    sulu_sme.kernel.root_dir: %kernel.root_dir%/../vendor/connectholland/sulu-sme/app
+    sulu_sme.kernel.root_dir: '%kernel.root_dir%/../vendor/connectholland/sulu-sme/app'
+    sulu.cache_dir: '%sulu_sme.kernel.root_dir%/../var/cache/%sulu.context%/%kernel.environment%'
+    sulu.log_dir: '%sulu_sme.kernel.root_dir%/../var/logs/%sulu.context%/%kernel.environment%'
 
 framework:
     #esi:             ~
@@ -89,20 +91,23 @@ jms_serializer:
 # SuluCore Configuration
 sulu_core:
     webspace:
-        config_dir: "%sulu_sme.kernel.root_dir%/Resources/webspaces"
+        config_dir: "%kernel.root_dir%/Resources/webspaces"
     content:
         structure:
             default_type:
                 snippet: "default"
             paths:
                 homepage:
-                    path: "%sulu_sme.kernel.root_dir%/Resources/templates/pages"
+                    path: "%sulu_sme.kernel.root_dir%/../src/DefaultBundle/Resources/templates/pages"
                     type: "home"
                 page:
-                    path: "%sulu_sme.kernel.root_dir%/Resources/templates/pages"
+                    path: "%sulu_sme.kernel.root_dir%/../src/DefaultBundle/Resources/templates/pages"
                     type: "page"
+                contact:
+                    path: "%sulu_sme.kernel.root_dir%/../src/DefaultBundle/Resources/templates/pages"
+                    type: "contact"
                 snippet:
-                    path: "%sulu_sme.kernel.root_dir%/Resources/templates/snippets"
+                    path: "%sulu_sme.kernel.root_dir%/../src/DefaultBundle/Resources/templates/snippets"
                     type: "snippet"
 
 # SuluDocumentManager Configuration
